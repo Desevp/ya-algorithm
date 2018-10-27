@@ -51,4 +51,31 @@ function insertSort(arr) {
   return arr;
 }
 
-console.log(insertSort([123, 54, 0 , 123, 3, 6, 1, 0]));
+// Обход дерева
+
+class  Node {
+  constructor(value, leftNode, rightNode) {
+    this.value = value;
+    this.left = leftNode;
+    this.right = rightNode;
+  }
+}
+
+
+const testNode_A = new Node('A',new Node('B', new Node('C'), new Node('D')), new Node('E', new Node('F', new Node('G'), new Node ('H'))));
+
+function treeSearch(node, callback) {
+  if (node) {
+    treeSearch(node.left, callback);
+    if (node) {
+      callback(node);
+    }
+    treeSearch(node.right, callback);
+  }
+}
+
+const printNodeValue = (node) => {
+  console.log(node.value);
+}
+
+treeSearch(testNode_A, printNodeValue);
