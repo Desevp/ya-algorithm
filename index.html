@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Test function</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+  </head>
+  <body>
+    <h1>Sort</h1>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+
+    // Сортировка пузырьком
+    function bubbleSort(arr) {
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+          if (arr[i] > arr[j]) {
+            const temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+          }
+        }
+      }
+      return arr;
+    }
+
+    console.log(bubbleSort([3, 0, 443, 4, 1, 6, 32]));
+    </script>
+  </body>
+</html>
