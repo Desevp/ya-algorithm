@@ -34,4 +34,21 @@ function selectionSort(arr) {
   return arr;
 }
 
-console.log(selectionSort([0,4 , 4353 ,4, 6 ,1 ,0 ,4 ,7 ]));
+// Сортировка вставками
+function insertSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = i; j > 0; j--) {
+      if (arr[j] < arr[j-1]) {
+        const temp = arr[j-1];
+        arr[j-1] = arr[j];
+        arr[j] = temp;
+      }
+      else {
+        break;
+      }
+    }
+  }
+  return arr;
+}
+
+console.log(insertSort([123, 54, 0 , 123, 3, 6, 1, 0]));
