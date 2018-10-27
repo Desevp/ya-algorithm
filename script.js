@@ -13,4 +13,25 @@ function bubbleSort(arr) {
   return arr;
 }
 
-console.log(bubbleSort([3, 0, 443, 4, 1, 6, 32]));
+// Сортировка выбором
+function selectionSort(arr) {
+  for (var i = 0; i < arr.length; i++) {
+    let minIndex = i;
+    let j = i;
+    while (j < arr.length) {
+      if (arr[minIndex] > arr[j]) {
+        minIndex = j;
+      }
+      j++;
+    }
+
+    if (arr[i] > arr[minIndex]) {
+      const temp = arr[i];
+      arr[i] = arr[minIndex];
+      arr[minIndex] = temp;
+    }
+  }
+  return arr;
+}
+
+console.log(selectionSort([0,4 , 4353 ,4, 6 ,1 ,0 ,4 ,7 ]));
